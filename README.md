@@ -26,8 +26,7 @@ The project introduces the following new features:
 - **Edu_Total_Appearance:** The total number of times educational keywords in lower case appear in the given context.
   
 - **Edu_Word_Count:** The total number of words in all the educational keywords present in the given context.
-- 'Middle_School_Context'
-- 构造一个high school的list
+- **Middle_School_Context** (List of Strings): A list of middle school educational context keywords extracted from the creator's biography.
 
 #### Example 1:
 - **Project ID:** 6464
@@ -70,3 +69,4 @@ The project introduces the following new features:
 7. **Edu_Word_Count** (Integer): The total number of words in all the educational keywords present in the given context.
 
 8. **Edu_Keywords_Occurrence** (Counter): A dictionary-like object (Counter) that stores the occurrence of each educational keyword in the given context.
+9. **Middle_School_Context** (List of Strings): A list of middle school educational context keywords extracted from the creator's biography.
