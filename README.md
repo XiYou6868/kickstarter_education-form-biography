@@ -7,35 +7,37 @@ We confirm that each project's unique identifier (`ProjectID`) has remained cons
 This version of the dataset has undergone deduplication based on `CreatorName`, `ProjectName`, `Verified`, and `StartDate` to remove duplicate entries.
 
 ### Education Related Feature :
-**High_Educated_Bio** (Boolean): True for high educatied.(with a bachelor degree or above.A binary indicator (True/False) signifying the presence of educational context within the biography section. Words like "graduate," "degree," "alumnus," and "educated" are recognized regardless of how they are capitalized. For example, "Graduate," "graduate," "GRADUATE," or "GrAdUaTe" would all be detected similarly.
+**High_Educated_Bio** (Boolean): A binary indicator (True/False) signifying the presence of educational context within the biography section. True for high educated (with keywords in the biography mentioning a bachelor's degree or above). Words like 'University' are recognized regardless of how they are capitalized. For example, 'university', 'University' would all be detected similarly. 
 
-**Education_Level** (Category): Categories of the highest education level mentioned in the creator's biography.readme里面更新一下这个实际上是没有提education，并注明名字可能会带来误解
-'Below Bachelors': high school or lower/not indicated,
- 'Bachelors': Bachelor's,
- 'Graduate': Graduate, 
-'Doctorate': Doctorate)., 
+**Education_Level** (Category): Categories of the highest education level mentioned in the creator's biography.
+  - "Below Bachelors": High school or lower/not indicated. 
+  - "Bachelors": Bachelor's,
+  - "Graduate": Graduate, 
+ - "Doctorate": Doctorate degree.
+ - Please note that "Below Bachelors" encompasses situations where there are no keywords in the biography mentioning a bachelor's degree or higher education, and be aware that the name might be misleading.
 #### New Variable:
 
 The project introduces the following new features:
 
 - **Edu_Keywords_Occurrence:** A dictionary-like object (Counter) that stores the occurrence of each educational keyword in the given context.
   
-- **Edu_Unique_Keywords:** A list of unique educational keywords present in the given context.
+- **Edu_Unique_Keywords:** A list of unique educational keywords present in the given context in lower case.
   
-- **Edu_Total_Appearance:** The total number of times educational keywords appear in the given context.
+- **Edu_Total_Appearance:** The total number of times educational keywords in lower case appear in the given context.
   
 - **Edu_Word_Count:** The total number of words in all the educational keywords present in the given context.
+- 'Middle_School_Context'
 - 构造一个high school的list
 
 #### Example 1:
 - **Project ID:** 6464
 - **Biography:** 
   [`Biography`  text omitted for brevity]
-- **Education Context:** ['graduate', 'degree', 'degree', 'University', 'University', 'College']
+- **Education Context:** ['degree', 'degree', 'graduate', 'University', 'University', 'College']
 - **High Educated Bio:** True
 - **Education Level:** Bachelors
-- **Edu Keywords Occurrence:** Counter({'degree': 2, 'University': 2, 'graduate': 1, 'College': 1})
-- **Edu Unique Keywords:** ['graduate', 'degree', 'University', 'College']
+- **Edu Keywords Occurrence:** Counter({'degree': 2, 'university': 2, 'graduate': 1, 'college': 1})
+- **Edu Unique Keywords:** ['degree', 'graduate', 'university', 'college']
 - **Edu Total Appearance:** 6
 - **Edu Word Count:** 6
   
@@ -59,7 +61,7 @@ The project introduces the following new features:
 
 3. **Education_Level** (Category): Categories of the highest education level mentioned in the creator's biography.
 
-4. **Education_Context** (List of Strings): A list of educational context keywords extracted from the creator's biography.
+4. **Education_Context** (List of Strings): A list of high educational context keywords extracted from the creator's biography.
 
 5. **Edu_Unique_Keywords** (List of Strings): A list of unique educational keywords present in the given context.
 
