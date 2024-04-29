@@ -7,9 +7,9 @@ We confirm that each project's unique identifier (`ProjectID`) has remained cons
 This version of the dataset has undergone deduplication based on `CreatorName`, `ProjectName`, `Verified`, and `StartDate` to remove duplicate entries.
 
 ### Education Related Feature :
-**High_Educated_Bio** (Boolean): A binary indicator (True/False) signifying the presence of educational context within the biography section. Words like "graduate," "degree," "alumnus," and "educated" are recognized regardless of how they are capitalized. For example, "Graduate," "graduate," "GRADUATE," or "GrAdUaTe" would all be detected similarly.
+**High_Educated_Bio** (Boolean): True for high educatied.(with a bachelor degree or above.A binary indicator (True/False) signifying the presence of educational context within the biography section. Words like "graduate," "degree," "alumnus," and "educated" are recognized regardless of how they are capitalized. For example, "Graduate," "graduate," "GRADUATE," or "GrAdUaTe" would all be detected similarly.
 
-**Education_Level** (Category): Categories of the highest education level mentioned in the creator's biography.
+**Education_Level** (Category): Categories of the highest education level mentioned in the creator's biography.readme里面更新一下这个实际上是没有提education，并注明名字可能会带来误解
 'Below Bachelors': high school or lower/not indicated,
  'Bachelors': Bachelor's,
  'Graduate': Graduate, 
@@ -25,6 +25,7 @@ The project introduces the following new features:
 - **Edu_Total_Appearance:** The total number of times educational keywords appear in the given context.
   
 - **Edu_Word_Count:** The total number of words in all the educational keywords present in the given context.
+- 构造一个high school的list
 
 #### Example 1:
 - **Project ID:** 6464
